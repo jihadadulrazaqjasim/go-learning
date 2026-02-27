@@ -20,6 +20,9 @@ func main() {
 	lw := logWriter{}
 
 	io.Copy(lw, resp.Body)
+
+	// File reader demo - reads test.txt using io.Copy to stdout
+	readFile("test.txt")
 }
 
 func (logWriter) Write(bs []byte) (n int, err error) {

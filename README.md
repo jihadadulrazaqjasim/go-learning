@@ -130,30 +130,20 @@ Advanced multi-interface document processor with type assertions.
 
 ## 10-reader-writer
 
-Custom `io.Writer` implementation with HTTP response piping.
+Custom `io.Writer` implementation with HTTP response piping and file reading.
 
 **Concepts learned:**
 - Go's `io.Reader` and `io.Writer` interfaces
 - HTTP requests with `net/http.Get`
 - Implementing `Write([]byte) (int, error)` to satisfy `io.Writer`
 - `io.Copy` to pipe HTTP response body through a custom writer
-
----
-
-## 11-file-reader
-
-Read and print a file's contents using `os.Open` and `io.Copy`.
-
-**Concepts learned:**
 - Opening files with `os.Open`
 - File metadata via `file.Stat()` (name, size, isDir)
 - Piping file content to stdout with `io.Copy(os.Stdout, file)`
-- Command-line arguments (`os.Args[1]`)
-- Error handling and `os.Exit(1)`
 
 ---
 
-## 12-channels
+## 11-channels
 
 Order notification system using goroutines and channels.
 
