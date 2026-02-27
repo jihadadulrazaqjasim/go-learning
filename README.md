@@ -10,7 +10,7 @@ A card deck application covering Go fundamentals.
 
 **Concepts learned:**
 - Variables, functions, and return values
-- Custom types (`type deck []string`, `type color string`)
+- Custom types (`type deck []string`)
 - Receiver functions (methods on types)
 - Slices: creating, appending, and range-based iteration
 - Slice splitting for dealing cards (`d[:n]`, `d[n:]`)
@@ -24,11 +24,11 @@ A card deck application covering Go fundamentals.
 
 ## 02-custom-types
 
-Exploring custom types and receiver functions with a book type and deck.
+Exploring custom types and receiver functions with a book type, color type, and deck.
 
 **Concepts learned:**
-- Defining custom types from primitives (`type book string`)
-- Receiver functions: `printTitle()`, `countLetters()`, `titleToUpperCase()`
+- Defining custom types from primitives (`type book string`, `type color string`)
+- Receiver functions: `printTitle()`, `countLetters()`, `titleToUpperCase()`, `describe()`
 - Using `strings.ToUpper` for string conversion
 - Rewriting the deck type and `newDeck()` for practice
 
@@ -59,20 +59,33 @@ Modeling a person with nested contact info using structs.
 
 ---
 
-## 05-interfaces
+## 05-maps
 
-A payment system demonstrating interfaces with CreditCard, PayPal, and Cash.
+Working with Go maps for key-value data storage.
+
+**Concepts learned:**
+- Creating maps with `make(map[string]string)`
+- Map literal syntax (`map[string]string{...}`)
+- Adding key-value pairs
+- `len()` for map size
+
+---
+
+## 06-interfaces
+
+A payment system and shape calculator demonstrating interfaces.
 
 **Concepts learned:**
 - Defining interfaces (`PaymentMethod` with `Process` and `GetName`)
 - Multiple types satisfying the same interface
 - Error handling with `fmt.Errorf` and `error` return type
 - String slicing for masking card numbers
-- Polymorphism: passing different types to a single `Checkout` function
+- Polymorphism: passing different types to a single function (`Checkout`, `printArea`)
+- Shape interface (`square`, `rectangular` with `area()`)
 
 ---
 
-## 06-interfaces-ii
+## 07-interfaces-ii
 
 A document processing system using Logger and Document interfaces.
 
@@ -84,7 +97,7 @@ A document processing system using Logger and Document interfaces.
 
 ---
 
-## 07-interfaces-iii
+## 08-interfaces-iii
 
 Advanced multi-interface document processor with type assertions.
 
@@ -98,21 +111,19 @@ Advanced multi-interface document processor with type assertions.
 
 ---
 
-## 08-reader-writer
+## 09-reader-writer
 
-Shape area calculator and custom `io.Writer` implementation.
+Custom `io.Writer` implementation with HTTP response piping.
 
 **Concepts learned:**
-- Interfaces for polymorphism (`shape` with `area()`)
-- `fmt.Printf` with `%T` for printing types
 - Go's `io.Reader` and `io.Writer` interfaces
-- HTTP requests with `net/http` (commented out)
+- HTTP requests with `net/http.Get`
 - Implementing `Write([]byte) (int, error)` to satisfy `io.Writer`
-- `io.Copy` to pipe data between Reader and Writer
+- `io.Copy` to pipe HTTP response body through a custom writer
 
 ---
 
-## 09-file-reader
+## 10-file-reader
 
 Read and print a file's contents using `os.Open` and `io.Copy`.
 
@@ -125,7 +136,7 @@ Read and print a file's contents using `os.Open` and `io.Copy`.
 
 ---
 
-## 10-channels
+## 11-channels
 
 Order notification system using goroutines and channels.
 
@@ -140,7 +151,7 @@ Order notification system using goroutines and channels.
 
 ---
 
-## 11-user-crud
+## 12-user-crud
 
 A user management service with full CRUD operations, organized into packages.
 

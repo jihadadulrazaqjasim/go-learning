@@ -15,4 +15,4 @@
 go.work
 
 # Compiled binaries (no extension)
-/01-deck-and-tests/cards
+cards

@@ -17,37 +17,33 @@ type person struct {
 }
 
 func main() {
-
 	something()
-// 	jihad := person{
-// 		firstName: "Jihad",
-// 		contactInfo: contactInfo{
-// 			email:   "jihad@gmail.com",
-// 			zipCode: 44001,
-// 		},
-// 	}
 
-// 	jihadPointer := &jihad
-// 	jihadPointer.updateName("hooo")
-// 	jihadPointer.print() //Here this time Go autmatically change the reference (pointer) to actual value as we per func definition (* not forced)
-// 	println()
-	
-// 	//Go automatically change jihad to pointer (reference) as we forced using * in func( *person)
-// 	jihad.updateName("Jojo") 
-// 	jihad.print()
+	jihad := person{
+		firstName: "Jihad",
+		contactInfo: contactInfo{
+			email:   "jihad@gmail.com",
+			zipCode: 44001,
+		},
+	}
 
-// name := "jihad"
+	jihadPointer := &jihad
+	jihadPointer.updateName("hooo")
+	jihadPointer.print() // Go automatically converts reference (pointer) to actual value
+	println()
 
-// namePointer := &name
+	// Go automatically converts jihad to pointer (reference) since we use *person receiver
+	jihad.updateName("Jojo")
+	jihad.print()
 
-// fmt.Println(&namePointer)
-
-// updateName(namePointer)
-// // fmt.Println(name)
+	name := "jihad"
+	namePointer := &name
+	fmt.Println(&namePointer)
+	updateName(namePointer)
 }
 
-func updateName(namePointer *string){
-	 fmt.Println(&namePointer)
+func updateName(namePointer *string) {
+	fmt.Println(&namePointer)
 }
 
 func (p *person) updateName(newFirstName string) {
