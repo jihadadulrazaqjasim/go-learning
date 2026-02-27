@@ -106,4 +106,11 @@ func main() {
 
 	// Test error case
 	Checkout(cash, -1)
+
+	// Shape interface demo
+	sq := square{sideLength: 2}
+	printArea(sq)
+
+	rect := rectangular{length: 2, width: 3}
+	printArea(rect)
 }
